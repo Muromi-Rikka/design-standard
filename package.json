@@ -1,12 +1,48 @@
 {
   "name": "design-standard",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main": "./dist/ext-src/extension.js",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "publisher": "rikka",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "design-standard",
+          "title": "Design Standard",
+          "icon": "media/navAlias.svg"
+        }
+      ]
+    },
+    "views": {
+      "design-standard": [
+        {
+          "type": "webview",
+          "id": "design-standard",
+          "name": "Design Standard",
+          "contextualTitle": "Design Standard"
+        }
+      ]
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build-dev": "ng build --output-hashing none && tsc -p tsconfig.extension.json",
+    "test": "ng test",
+    "package": "vsce package --yarn",
+    "redux-devtools": "redux-devtools --hostname=localhost --port=8765 --open",
+    "vscode:prepublish": "yarn build && tsc -p tsconfig.extension.json"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +54,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "color": "^4.2.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -26,13 +63,18 @@
     "@angular-devkit/build-angular": "^15.0.4",
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.0",
+    "@types/color": "^3.0.3",
     "@types/jasmine": "~4.3.0",
+    "@types/vscode": "^1.75.0",
+    "autoprefixer": "^10.4.13",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
     "typescript": "~4.8.2"
   }
 }
