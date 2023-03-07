@@ -1,6 +1,6 @@
 {
   "name": "design-standard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/ext-src/extension.js",
   "engines": {
     "vscode": "^1.74.0"
@@ -20,7 +20,7 @@
         {
           "id": "design-standard",
           "title": "Design Standard",
-          "icon": "media/navAlias.svg"
+          "icon": "resources/design.svg"
         }
       ]
     },
