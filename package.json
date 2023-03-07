@@ -1,6 +1,6 @@
 {
   "name": "design-standard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/ext-src/extension.js",
   "engines": {
     "vscode": "^1.74.0"

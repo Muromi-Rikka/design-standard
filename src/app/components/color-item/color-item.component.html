@@ -1,0 +1,21 @@
+<div
+  *ngIf="color && !color.tailwind"
+  (click)="handleCopy(color.color)"
+  class="color-item"
+  [ngStyle]="{ 'background-color': color.color }"
+  [ngClass]="{ 'text-black': color.isLight, 'text-white': !color.isLight }"
+>
+  <div class="w-16 pl-1">{{ color.color }}</div>
+  <div>{{ color.label }}</div>
+</div>
+<div
+  *ngIf="color && color.tailwind"
+  (click)="handleCopy(color.color)"
+  class="color-item"
+  [ngStyle]="{ 'background-color': color.color }"
+  [ngClass]="{ 'text-black': color.isLight, 'text-white': !color.isLight }"
+>
+  <div class="w-16 pl-1">{{ color.color }}</div>
+  <div class="color-label">{{ color.label }}</div>
+  <div class="color-tailwind">{{ color.tailwind }}</div>
+</div>

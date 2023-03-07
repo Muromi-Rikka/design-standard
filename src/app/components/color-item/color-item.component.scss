@@ -1,0 +1,15 @@
+.color-item{
+  @apply w-full h-6 p-1 cursor-pointer leading-4 text-xs flex flex-row justify-start items-center;
+  .color-tailwind{
+    display: none;
+  }
+  &:hover{
+    &>.color-tailwind{
+      display: initial;
+    }
+    &>.color-label{
+      display: none;
+    }
+  }
+
+}

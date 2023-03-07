@@ -11,7 +11,7 @@ export default class WebNgView {
 
   private disposables: vscode.Disposable[] = [];
   private configuration: vscode.WorkspaceConfiguration =
-    vscode.workspace.getConfiguration('commit-format');
+    vscode.workspace.getConfiguration('design-standard');
   constructor(context: vscode.ExtensionContext, view: vscode.WebviewView) {
     this.context = context;
     this.view = view;
@@ -37,7 +37,7 @@ export default class WebNgView {
   public static createOrShow(context: vscode.ExtensionContext) {}
 
   private update(): void {
-    this.view.title = 'commit format';
+    this.view.title = 'design standard';
     this.view.webview.html = this.getHtmlForWebview();
   }
 
@@ -72,7 +72,7 @@ export class DesignStandardProvider implements vscode.WebviewViewProvider {
   private _config: Configs;
   private _configPath: string;
   private configuration: vscode.WorkspaceConfiguration =
-    vscode.workspace.getConfiguration('commit-format');
+    vscode.workspace.getConfiguration('design-standard');
   constructor(
     context: vscode.ExtensionContext,
     config: Configs,
@@ -111,13 +111,13 @@ export class DesignStandardProvider implements vscode.WebviewViewProvider {
     );
     webviewView.webview.postMessage({ type: 'config', message: this._config });
 
-    vscode.commands.registerCommand('commitFormat.configRefresh', () => {
-      this._config = JSON.parse(readFileSync(this._configPath).toString());
-      webviewView.webview.postMessage({
-        type: 'config',
-        message: this._config,
-      });
-    });
+    // vscode.commands.registerCommand('commitFormat.configRefresh', () => {
+    //   this._config = JSON.parse(readFileSync(this._configPath).toString());
+    //   webviewView.webview.postMessage({
+    //     type: 'config',
+    //     message: this._config,
+    //   });
+    // });
   }
 
   private handleOnDidReceiveMessage(webviewView: vscode.WebviewView) {

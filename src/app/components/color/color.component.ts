@@ -17,8 +17,4 @@ export class ColorComponent {
       return { ...item, isLight: Color(item.color).isLight() };
     });
   }
-
-  public handleCopy(text: string) {
-    navigator.clipboard.writeText(text);
-  }
 }

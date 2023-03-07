@@ -5,6 +5,7 @@ interface CommonConfig {
 export interface ColorConfigItem {
   color: `#${string[6]}`;
   label: string;
+  tailwind?: string;
 }
 
 export interface ColorConfig extends CommonConfig {
