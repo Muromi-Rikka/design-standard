@@ -1689,9 +1689,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/vscode@^1.76.0":
+"@types/vscode@^1.74.0":
   version "1.76.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/@types/vscode/-/vscode-1.76.0.tgz#967c0fbe09921818bbf201f1cbcb81b981c6249c"
+  resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.76.0.tgz#967c0fbe09921818bbf201f1cbcb81b981c6249c"
   integrity sha512-CQcY3+Fe5hNewHnOEAVYj4dd1do/QHliXaknAEYSXx2KEHUzFibDZSKptCon+HPgK55xx20pR+PBJjf0MomnBA==
 
 "@types/ws@^8.5.1":

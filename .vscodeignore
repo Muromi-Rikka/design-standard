@@ -1,0 +1,11 @@
+.vscode/**
+.angular/**
+ext-src/**
+node_modules/**
+src/**
+.editorconfig
+.gitignore
+angular.json
+pnpm-lock.yaml
+tsconfig.**.json
+tsconfig.json
